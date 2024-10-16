@@ -41,6 +41,7 @@ const config: Config = {
   				foreground: 'hsl(var(--destructive-foreground))'
   			},
 				radical: '#F2CB13',
+				radicalGray: '#B1B3B3',
   			border: 'hsl(var(--border))',
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',

@@ -12,7 +12,7 @@ export default function Footer() {
       <section className="py-16 flex space-y-6 flex-col border-b-[1px] border-white/10">
         <div className="flex flex-col space-y-2">
           <h1 className="text-xl font-bold">
-            Our Global Partners
+            OUR GLOBAL PARTNERS
           </h1>
           <h3 className="text-gray-200">
             Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
@@ -29,7 +29,7 @@ export default function Footer() {
       <section className="py-16 flex justify-between border-b-[1px] border-white/10">
         <div className="flex flex-col space-y-2">
           <h1 className="text-xl font-bold">
-            Our Global Partners
+            JOIN OUR NEWSLETTER
           </h1>
           <h3 className="text-gray-200">
             Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
@@ -60,7 +60,7 @@ export default function Footer() {
         <div className='flex justify-evenly w-full'>
           {footerLinks.map((section, index) => (
             <div key={index}>
-              <h4 className='text-[#b1b3b3] mb-4'>{section.heading}</h4>
+              <h4 className='text-radicalGray mb-4'>{section.heading}</h4>
               <ul className='space-y-2'>
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
@@ -75,7 +75,7 @@ export default function Footer() {
         </div>
 
       </section>
-      <section className='py-8 flex justify-between text-[#b1b3b3]'>
+      <section className='py-8 flex justify-between text-radicalGray'>
         <h2>
           © 2023 Radical Motorsport
         </h2>
