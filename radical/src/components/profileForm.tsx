@@ -39,7 +39,6 @@ export function ProfileForm({
   dealers: DealerResponse
 }) {
   const processedDealers: { title: string, id: string }[] = dealers?.results?.map((dealer: Dealer) => ({ title: dealer?.title, id: dealer.id })) || []
-  console.log(processedDealers)
   const [submittedValues, setSubmittedValues] = useState<z.infer<typeof profileFormSchema> | null>(null)
 
   const form = useForm<z.infer<typeof profileFormSchema>>({
@@ -55,12 +54,8 @@ export function ProfileForm({
     },
   })
 
-  // 2. Define a submit handler.
   function onSubmit(values: z.infer<typeof profileFormSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     setSubmittedValues(values)
-    console.log(values)
   }
 
 
