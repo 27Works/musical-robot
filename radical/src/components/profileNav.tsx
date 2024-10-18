@@ -1,13 +1,31 @@
+"use client"
+
 import Image from 'next/image'
 import RadicalLogo from "@/../public/images/radical_logo.png"
 import Link from 'next/link'
 import { Bell, UserRound } from 'lucide-react'
+import { useEffect, useState } from 'react';
 
 export default function ProfileNavbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 65) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-    <>
-      <nav className="px-[100px] w-full flex justify-between pt-6 absolute z-10">
+    <div className={`fixed top-0 left-0 right-0 z-50`}>
+      <nav className={`px-[100px] w-full flex justify-between py-4 absolute z-10 transition-colors ${isScrolled ? 'bg-black/80' : ''}`}>
         <Link href={"/latest"}>
           <Image
             src={RadicalLogo}
@@ -60,6 +78,6 @@ export default function ProfileNavbar() {
           </div>
         </div>
       </nav>
-    </>
+    </div>
   )
 }

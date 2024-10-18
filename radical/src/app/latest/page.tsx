@@ -13,8 +13,8 @@ export default async function Home() {
 
   return (
     <>
+      <Navbar />
       <div className="h-screen">
-        <Navbar />
         <div className="relative w-full h-full">
           <Image
             src={ArticalHero}
@@ -37,7 +37,7 @@ export default async function Home() {
                       <div className="bg-black h-[400px] rounded-xl shadow-radical shadow-lg flex flex-col overflow-hidden border-2 border-radical pb-12">
                         <div className="relative">
                           <Image src={post.sections?.find((section) => section.content_type === "image")?.image?.[0]?.url || ArticalThumb1} alt="thumbnail" height={350} width={500} />
-                          <div className="absolute bg-gradient-to-t from-black h-[64px] to-transparent  z-50 w-full bottom-0"></div>
+                          <div className="absolute bg-gradient-to-t from-black h-[64px] to-transparent  z-30 w-full bottom-0"></div>
                         </div>
                         <div className="p-4 pr-8 -translate-y-5">
                           <h2 className={`text-white text-2xl ${futuraPTBold.className} z-[51]`}>{post.title}</h2>

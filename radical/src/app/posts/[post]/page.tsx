@@ -49,8 +49,6 @@ export default async function Page({
 
 
 
-
-
   return (<>
     <div className="h-screen bg-black">
       <Navbar />

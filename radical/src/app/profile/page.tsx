@@ -27,29 +27,29 @@ export default async function Page() {
             quality={100}
           />
           <div className="absolute z-9 inset-0 flex items-center justify-center w-full h-full">
-            <div className="px-[100px] grid grid-cols-10 gap-x-32">
-              <div className="rounded-md border-2 border-white/5 flex flex-col w-[400px] items-center px-8 pb-8 bg-[#161616] col-span-3">
-                <div className="rounded-full overflow-hidden w-[189px] h-[189px] border-2 border-white/5 relative shadow-md transform -translate-y-1/2">
+            <div className="px-4 md:px-[100px] grid grid-cols-1 md:grid-cols-10 gap-x-4 md:gap-x-32">
+              <div className="rounded-md border-2 border-white/5 flex flex-col w-full md:w-[400px] items-center px-4 md:px-8 pb-8 bg-[#161616] col-span-1 md:col-span-3">
+                <div className="rounded-full overflow-hidden w-[120px] md:w-[189px] h-[120px] md:h-[189px] border-2 border-white/5 relative shadow-md transform -translate-y-1/2">
                   <Image
                     src={Avatar}
-                    // width={500}
-                    // height={500}
                     alt="Avatar"
                     objectPosition="center"
                   />
-                  <div className="w-7 h-7 bg-black border-[1px] border-white/50 absolute z-15 rounded-full bottom-2 text-radical flex justify-center items-center right-[78px]">
-                    <Pencil width={14} height={14} />
+                  <div className="w-5 md:w-7 h-5 md:h-7 bg-black border-[1px] border-white/50 absolute z-15 rounded-full bottom-2 text-radical flex justify-center items-center right-[50px] md:right-[78px]">
+                    <Pencil width={10} height={10} />
                   </div>
                 </div>
-                <div className={`text-center -mt-16 flex flex-col space-y-2 text-white ${futuraPTBook.className}`}>
-                  <h1 className={`text-2xl bg-gradient-to-r from-radical to-[#FF9900] bg-clip-text text-transparent ${futuraPTBold.className}`}>Josephine Robinson</h1>
+                <div className={`text-center -mt-8 md:-mt-16 flex flex-col space-y-2 text-white ${futuraPTBook.className}`}>
+                  <h1 className={`text-xl md:text-2xl bg-gradient-to-r from-radical to-[#FF9900] bg-clip-text text-transparent ${futuraPTBold.className}`}>Josephine Robinson</h1>
                   <p>Radical Since 2020</p>
-                  <div className="text-radical flex justify-center"><div className="border-b-[1px] w-fit border-radical flex items-center space-x-1">
-                    <Pencil width={12} height={12} /> <p className="text-sm">Edit Profile</p>
+                  <div className="text-radical flex justify-center">
+                    <div className="border-b-[1px] w-fit border-radical flex items-center space-x-1">
+                      <Pencil width={10} height={10} />
+                      <p className="text-xs md:text-sm">Edit Profile</p>
+                    </div>
                   </div>
                 </div>
-                </div>
-                <div className={`mt-[40px] w-full flex flex-col space-y-3 ${futuraPTBold.className}`}>
+                <div className={`mt-[20px] md:mt-[40px] w-full flex flex-col space-y-2 md:space-y-3 ${futuraPTBold.className}`}>
                   {profileTabs.map((tab, index) => (
                     <ProfileTab
                       key={index}
@@ -60,8 +60,8 @@ export default async function Page() {
                   ))}
                 </div>
               </div>
-              <div className=" bg-[#161616] rounded-md border-2 border-white/5 p-8 col-span-7 z-50">
-                <h1 className={`bg-gradient-to-r from-radical to-[#FF9900] bg-clip-text text-transparent text-xl ${futuraPTBold.className}`}>MY PROFILE</h1>
+              <div className="bg-[#161616] rounded-md border-2 border-white/5 p-4 md:p-8 col-span-1 md:col-span-7 z-50">
+                <h1 className={`bg-gradient-to-r from-radical to-[#FF9900] bg-clip-text text-transparent text-lg md:text-xl ${futuraPTBold.className}`}>MY PROFILE</h1>
                 <ProfileForm dealers={dealers} />
               </div>
             </div>
