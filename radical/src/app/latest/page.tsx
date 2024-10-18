@@ -32,21 +32,19 @@ export default async function Home() {
               </FadeUp>
               <div className="grid grid-cols-3 gap-16 mt-24">
                 {posts.slice(0, 3).map((post, index) => (
-                  <>
-                    <FadeUp delay={0.4 + index * 0.4} duration={4}>
-                      <Link href={`/posts/${post.slug}`}>
-                        <div className="bg-black h-[400px] rounded-xl shadow-radical shadow-lg flex flex-col overflow-hidden border-2 border-radical pb-12">
-                          <div className="relative">
-                            <Image src={post.sections?.find((section) => section.content_type === "image")?.image?.[0]?.url || ArticalThumb1} alt="thumbnail" height={350} width={500} />
-                            <div className="absolute bg-gradient-to-t from-black h-[64px] to-transparent  z-50 w-full bottom-0"></div>
-                          </div>
-                          <div className="p-4 pr-8 -translate-y-5">
-                            <h2 className={`text-white text-2xl ${futuraPTBold.className} z-[51]`}>{post.title}</h2>
-                          </div>
+                  <FadeUp delay={0.4 + index * 0.4} duration={4} key={index}>
+                    <Link href={`/posts/${post.slug}`}>
+                      <div className="bg-black h-[400px] rounded-xl shadow-radical shadow-lg flex flex-col overflow-hidden border-2 border-radical pb-12">
+                        <div className="relative">
+                          <Image src={post.sections?.find((section) => section.content_type === "image")?.image?.[0]?.url || ArticalThumb1} alt="thumbnail" height={350} width={500} />
+                          <div className="absolute bg-gradient-to-t from-black h-[64px] to-transparent  z-50 w-full bottom-0"></div>
                         </div>
-                      </Link>
-                    </FadeUp>
-                  </>
+                        <div className="p-4 pr-8 -translate-y-5">
+                          <h2 className={`text-white text-2xl ${futuraPTBold.className} z-[51]`}>{post.title}</h2>
+                        </div>
+                      </div>
+                    </Link>
+                  </FadeUp>
                 ))}
               </div>
             </div>
