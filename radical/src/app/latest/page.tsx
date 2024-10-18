@@ -28,7 +28,7 @@ export default async function Home() {
           <div className="absolute inset-x-0 px-[100px] w-full flex items-center my-auto h-full">
             <div className="max-w-full">
               <FadeUp delay={0.4} duration={4}>
-                <h1 className={`text-5xl text-white text-left ${futuraPTBold.className}`}>Latest by <span className="text-radical">Radical</span></h1>
+                <h1 className={`text-5xl text-white text-left ${futuraPTBold.className}`}>Latest from <span className="text-radical">Radical</span></h1>
               </FadeUp>
               <div className="grid grid-cols-3 gap-16 mt-24">
                 {posts.slice(0, 3).map((post, index) => (
