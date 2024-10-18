@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${futuraPTMedium.className}`}
+        className={`${futuraPTMedium.className} bg-black`}
       >
         {children}
       </body>

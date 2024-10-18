@@ -1,7 +1,6 @@
 "use server";
 
 import axios from "axios";
-import { revalidatePath } from "next/cache";
 
 export const getDealers = async () => {
   const authHeaders = {
@@ -41,7 +40,6 @@ export type Dealer = {
   id: string;
   lat: number;
   lng: number;
-  metadata: any[];
   phone: string;
   project_id: string;
   publish_at: string | null;

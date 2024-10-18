@@ -1,8 +1,6 @@
 import Image from 'next/image'
 import RadicalLogo from "@/../public/images/radical_logo.png"
-import RightChevron from "@/../public/icons/right-chevron.svg"
 import Link from 'next/link'
-import { Button } from './ui/button'
 import { Bell, UserRound } from 'lucide-react'
 
 export default function ProfileNavbar() {
@@ -10,13 +8,15 @@ export default function ProfileNavbar() {
   return (
     <>
       <nav className="px-[100px] w-full flex justify-between pt-6 absolute z-10">
-        <Image
-          src={RadicalLogo}
-          alt="Radical Logo"
-          width={196}
-          height={40}
-          priority
-        />
+        <Link href={"/latest"}>
+          <Image
+            src={RadicalLogo}
+            alt="Radical Logo"
+            width={196}
+            height={40}
+            priority
+          />
+        </Link>
         <div>
           <div className='flex items-center space-x-4 text-white'>
             <Link href={"#"}>

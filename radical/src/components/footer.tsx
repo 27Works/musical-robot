@@ -5,13 +5,14 @@ import { Input } from './ui/input'
 import { Button } from './ui/button'
 import Link from 'next/link'
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-react'
+import { futuraPTBold, futuraPTBook } from '@/app/fonts/fonts'
 
 export default function Footer() {
   return (
-    <footer className="px-[100px] bg-black text-white border-t-[1px] border-white/10" style={{ backgroundImage: 'linear-gradient(to bottom, #121212, #000)' }}>
+    <footer className={`px-[100px] bg-black text-white border-t-[1px] border-white/10 ${futuraPTBook.className}`} style={{ backgroundImage: 'linear-gradient(to bottom, #121212, #000)' }}>
       <section className="py-16 flex space-y-6 flex-col border-b-[1px] border-white/10">
         <div className="flex flex-col space-y-2">
-          <h1 className="text-xl font-bold">
+          <h1 className={`text-xl ${futuraPTBold.className}`}>
             OUR GLOBAL PARTNERS
           </h1>
           <h3 className="text-gray-200">
@@ -28,7 +29,7 @@ export default function Footer() {
       </section>
       <section className="py-16 flex justify-between border-b-[1px] border-white/10">
         <div className="flex flex-col space-y-2">
-          <h1 className="text-xl font-bold">
+          <h1 className={`text-xl ${futuraPTBold.className}`}>
             JOIN OUR NEWSLETTER
           </h1>
           <h3 className="text-gray-200">

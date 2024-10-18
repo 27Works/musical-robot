@@ -1,14 +1,15 @@
 "use client"
 
-import { set, z } from "zod"
+import {  z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "./ui/form"
 import { Input } from "./ui/input"
 import { Button } from "./ui/button"
-import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "./ui/select"
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "./ui/select"
 import { Dealer, DealerResponse } from "@/app/actions/getDealers"
 import { useState } from "react"
+import { futuraPTBold, futuraPTBook } from "@/app/fonts/fonts"
 
 const profileFormSchema = z.object({
   fullName: z.string().min(1, {
@@ -67,7 +68,7 @@ export function ProfileForm({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className=" text-radicalGray">
+      <form onSubmit={form.handleSubmit(onSubmit)} className={`text-radicalGray ${futuraPTBook.className}`}>
         {submittedValues && (
 
           <ul>
@@ -114,7 +115,7 @@ export function ProfileForm({
               <FormItem>
                 <FormLabel>Country</FormLabel>
                 <FormControl>
-                  <Select>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select a country" />
                     </SelectTrigger>
@@ -138,7 +139,7 @@ export function ProfileForm({
               <FormItem>
                 <FormLabel>Dealer</FormLabel>
                 <FormControl>
-                  <Select disabled={processedDealers.length === 0}>
+                  <Select disabled={processedDealers.length === 0} onValueChange={field.onChange} defaultValue={field.value}>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Select a Dealer" />
                     </SelectTrigger>
@@ -163,7 +164,7 @@ export function ProfileForm({
                 <FormItem>
                   <FormLabel>Which Radical do you own?</FormLabel>
                   <FormControl>
-                    <Select>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <SelectTrigger className="w-full">
                         <SelectValue placeholder="Select a radical" />
                       </SelectTrigger>
@@ -216,7 +217,7 @@ export function ProfileForm({
             )}
           />
         </div>
-        <Button type="submit" className="mt-6 bg-gradient-to-br from-radical to-[#FF9900] text-black">Save Profile</Button>
+        <Button type="submit" className={`mt-6 bg-gradient-to-br from-radical to-[#FF9900] text-black ${futuraPTBold.className}`}>Save Profile</Button>
       </form>
     </Form>
   )

@@ -1,5 +1,4 @@
 import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
 import Image from "next/image";
 import Grid from "@/../public/images/grid.png";
 import ProfileNavbar from "@/components/profileNav";
@@ -7,15 +6,12 @@ import Avatar from "@/../public/images/user_profile.jpg";
 import { CarFront, FileDown, LucideIcon, Megaphone, Pencil, UserRound } from "lucide-react";
 import RightChevron from "@/../public/icons/right-chevron.svg";
 import RightChevronRadicalGray from "@/../public/icons/right-chevron-radical-gray.svg";
-import { ForwardRefExoticComponent, SVGProps, useEffect, useState } from "react";
 import { ProfileForm } from "@/components/profileForm";
-
-import axios from 'axios';
 import { getDealers } from "../actions/getDealers";
+import { futuraPTBold, futuraPTBook } from "../fonts/fonts";
 
 export default async function Page() {
   const dealers = await getDealers();
-
 
 
   return (
@@ -30,7 +26,7 @@ export default async function Page() {
             objectFit="cover"
             quality={100}
           />
-          <div className="absolute z-10 inset-0 flex items-center justify-center w-full h-full">
+          <div className="absolute z-9 inset-0 flex items-center justify-center w-full h-full">
             <div className="px-[100px] grid grid-cols-10 gap-x-32">
               <div className="rounded-md border-2 border-white/5 flex flex-col w-[400px] items-center px-8 pb-8 bg-[#161616] col-span-3">
                 <div className="rounded-full overflow-hidden w-[189px] h-[189px] border-2 border-white/5 relative shadow-md transform -translate-y-1/2">
@@ -45,14 +41,15 @@ export default async function Page() {
                     <Pencil width={14} height={14} />
                   </div>
                 </div>
-                <div className="text-center -mt-16 flex flex-col space-y-2 text-white">
-                  <h1 className="text-2xl font-bold">Josephine Robinson</h1>
+                <div className={`text-center -mt-16 flex flex-col space-y-2 text-white ${futuraPTBook.className}`}>
+                  <h1 className={`text-2xl bg-gradient-to-r from-radical to-[#FF9900] bg-clip-text text-transparent ${futuraPTBold.className}`}>Josephine Robinson</h1>
                   <p>Radical Since 2020</p>
                   <div className="text-radical flex justify-center"><div className="border-b-[1px] w-fit border-radical flex items-center space-x-1">
                     <Pencil width={12} height={12} /> <p className="text-sm">Edit Profile</p>
-                  </div></div>
+                  </div>
                 </div>
-                <div className="mt-[40px] w-full flex flex-col space-y-3">
+                </div>
+                <div className={`mt-[40px] w-full flex flex-col space-y-3 ${futuraPTBold.className}`}>
                   {profileTabs.map((tab, index) => (
                     <ProfileTab
                       key={index}
@@ -63,8 +60,8 @@ export default async function Page() {
                   ))}
                 </div>
               </div>
-              <div className=" bg-[#161616] rounded-md border-2 border-white/5 p-8 col-span-7">
-                <h1 className="bg-gradient-to-r from-radical to-[#FF9900] bg-clip-text text-transparent text-xl">MY PROFILE</h1>
+              <div className=" bg-[#161616] rounded-md border-2 border-white/5 p-8 col-span-7 z-50">
+                <h1 className={`bg-gradient-to-r from-radical to-[#FF9900] bg-clip-text text-transparent text-xl ${futuraPTBold.className}`}>MY PROFILE</h1>
                 <ProfileForm dealers={dealers} />
               </div>
             </div>
