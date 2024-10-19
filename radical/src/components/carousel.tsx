@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import ArticalThumb1 from "@/../public/images/article_thumb_01.jpg";
 import { useState } from "react";
-import SideGradient from "@/../public/images/side_gradient.png"
 import RightChevron from "@/../public/icons/right-chevron-radical-gray.svg";
 import parse from 'html-react-parser';
 import { futuraPTBold, futuraPTBook } from "@/app/fonts/fonts";
@@ -62,7 +61,7 @@ export default function Carousel({
           <button onClick={nextSlide} className="absolute right-[56px] top-[182px] z-10">
             <Image src={RightChevron} height={36} width={36} alt="Right Chevron" />
           </button>
-          <Image src={SideGradient} alt="Left Gradient" className="absolute z-2 right-0 top-0 h-full " />
+          <div className="absolute z-2 right-0 top-0 h-full bg-gradient-to-r from-transparent to-black w-[100px]"></div>
         </>
       )}
       {currentIndex > 0 && (
@@ -70,7 +69,7 @@ export default function Carousel({
           <button onClick={prevSlide} className="absolute left-[56px] top-[182px] z-10">
             <Image src={RightChevron} height={36} width={36} alt="Left Chevron" style={{ transform: 'rotate(180deg)' }} />
           </button>
-          <Image src={SideGradient} alt="Right Gradient" className="absolute z-2 left-0 top-0 h-full " style={{ transform: 'rotate(180deg)' }} />
+          <div className="absolute z-2 left-0 top-0 h-full bg-gradient-to-l w-[100px] from-transparent to-black"></div>
         </>
       )}
 
